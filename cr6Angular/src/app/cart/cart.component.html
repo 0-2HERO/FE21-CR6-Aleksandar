@@ -1,0 +1,39 @@
+<div class="container mt-5 mb-5 pt-3">
+    <div class="d-flex justify-content-center  border-bottom mb-5">
+        <span>
+            <h2>Cart</h2>
+        </span>
+        <span><img class="ps-3" src="../../assets/images/cart.svg" style="width: 3rem;" alt=""></span>
+    </div>
+    <div class="cart-item d-flex justify-content-between mt-2 pb-3 mb-5 shadow-sm p-1" *ngFor=" let item of items">
+        <div><img src="../../assets/images/{{item.img}}" style="max-width: 10rem;" alt=""></div>
+        <div>{{item.destination}}</div>
+        <div>{{item.startDate}}</div>
+        <div>{{item.duration}}</div>
+        <div>{{item.price | currency}}</div>
+    </div>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+
+        <div class="container-fluid mt-5 border p-5 rounded shadow mb-5" style="width: 60vw;">
+            <div class="mb-3 row">
+                <label class="form-label">Name</label>
+                <input type="Name" formControlName="name">
+            </div>
+            <div class="mb-3 row">
+                <label class="form-label">Address</label>
+                <input type="email" formControlName="name">
+            </div>
+            <div class="mb-3 row">
+                <label class="form-label row">Email address</label>
+                <input type="email" formControlName="name">
+            </div>
+            <div class="mb-3 row">
+                <label class="form-label"> Card details</label>
+                <input type="email" formControlName="name">
+                <div id="emailHelp" class="form-text mt-3">We'll never share your personal data with anyone else.</div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 6rem;">Pay</button>
+        </div>
+    </form>

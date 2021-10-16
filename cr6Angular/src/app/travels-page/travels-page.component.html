@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center flex-wrap">
+    <div *ngFor="let product of products; index as productId">
+        <!-- fix border -->
+        <div class="card m-4shadow m-4" style="width: 18rem;">
+            <img src="../../assets/images/{{product.img}}" class="img-fluid rounded" alt="...">
+            <div class="card-body">
+
+                <h5 class="card-title">{{product.destination}}</h5>
+                <p class="fw-lighter">..for more details about the offer click bellow</p>
+                <!-- <p *ngIf="product.description" class="card-text">{{product.description}}</p> -->
+                <span><a routerLink="products/{{productId}}"><button type="button"
+                            class="btn btn-outline-light text-dark shadow-sm"><img
+                                src="../../assets/images/three-dots.svg" alt=""> More</button></a></span>
+            </div>
+        </div>
+    </div>
+</div>
